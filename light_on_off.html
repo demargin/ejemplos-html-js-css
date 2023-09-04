@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+<p>Here, a JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<script>
+function light(sw) {
+  var pic;
+  if (sw == 0) {
+    pic = "pic_bulboff.gif"
+  } else {
+    pic = "pic_bulbon.gif"
+  }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="pic_bulboff.gif" width="100" height="180">
+
+<p>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+</p>
+
+  <!-- Codigo optimizado -->
+<div>
+<h3>Codigo optimizado </h3>
+
+<h1>My First JavaScript</h1>
+<p>Here, JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<!-- Imagen inicialmente apagada -->
+<img id="myImage2" src="pic_bulboff.gif" width="100" height="180">
+
+<!-- Botón para alternar la luz -->
+<button type="button" onclick="toggleLight()">Toggle Light</button>
+
+<script>
+function toggleLight() {
+  // Obtener la referencia de la imagen por su ID
+  var image = document.getElementById('myImage2');
+
+  // Verificar si la imagen actual es la encendida
+  if (image.src.endsWith('bulbon.gif')) {
+    // Si es la encendida, cambiar a la imagen apagada
+    image.src = 'pic_bulboff.gif';
+  } else {
+    // Si es la apagada (o cualquier otra), cambiar a la imagen encendida
+    image.src = 'pic_bulbon.gif';
+  }
+}
+</script>
+</div>
+
+</body>
+</html>
+
